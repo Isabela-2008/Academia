@@ -1,0 +1,75 @@
+create database Academia;
+use Academia;
+
+create table if not exists Alunos (
+id_aluno int auto_increment primary key,
+nome varchar(100),
+data_nascimento datetime,
+genero enum("f,m"),
+telefone varchar(15),
+email varchar(50),
+data_cadastro date
+);
+
+create table if not exists Professores (
+id_professor int auto_increment primary key,
+nome varchar(100),
+especialidade varchar(100),
+telefone varchar(15),
+email varchar(100)
+);
+
+create table if not exists Planos (
+id_plano int auto_increment primary key,
+tipo_plano varchar(100),
+descricao varchar(100),
+preco decimal(10,2),
+duracao_meses varchar(100)
+);
+
+create table if not exists Treinos (
+id_treino int auto_increment primary key,
+id_aluno int,
+descricao varchar(100),
+data_inicio date,
+data_fim date
+);
+
+create table if not exists Aulas (
+id_aula int auto_increment primary key,
+tipo_aula varchar(100),
+id_professor int,
+horario varchar(100),
+capacidade varchar(100)
+);
+
+create table if not exists Pagamentos (
+id_pagamento int auto_increment primary key,
+id_aluno int,
+id_plano int,
+data_pagamento varchar(100),
+valor_pago decimal(10,2),
+forma_pagamento varchar(100)
+); 
+
+insert into Alunos (nome,data_nascimento,genero,telefone,email,data_cadastro) values 
+("Isabela","06-11-08","femenino","1111111111111","isabela@gmail.com","02-18-15"),
+("Cintya","12-22-08","femenino","222222222222","cintya@gmail.com","02-18-15"),
+("Ricardo","06-27-10","Masculino","333333333333","ricardo@gmail.com","02-18-17");
+
+insert into Professores(nome,especialidade,telefone,email) values 
+("Lucas","Ganho de massa", "444444444444","lucas@gmail.com"),
+("Luziane","Calistenia", "555555555555", "luziane@gmail.com"),
+("Franciele","Aerobico","666666666666", "franciele@gmail.com");
+
+insert into Planos(descricao, preco,duracao_meses) values 
+("Perda de massa muscular",100,"seis meses");
+
+insert into Treinos(descricao,data_inicio,data_fim) values
+("A","10-10-24","04-10-25");
+
+insert into Aulas(horario, capacidade) values
+("11h ao 12h","1 hora");
+
+insert into Pagamentos(data_pagamento,valor_pago,forma_pagamento) values
+("10-10-24",50,"Pix");

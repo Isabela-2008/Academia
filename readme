@@ -1,0 +1,76 @@
+Banco de Dados Academia
+
+Este projeto envolve a criação de um banco de dados para uma academia, chamado Academia. O banco de dados é projetado para gerenciar informações sobre alunos, professores, planos de treinamento, treinos, aulas e pagamentos. Os principais componentes do banco de dados incluem:
+
+Alunos: Uma tabela para armazenar informações dos alunos, incluindo nome, data de nascimento, gênero, telefone, e-mail e data de cadastro.
+Professores: Uma tabela para registrar informações dos professores, incluindo nome, especialidade, telefone e e-mail.
+Planos: Uma tabela para armazenar os diferentes planos de treinamento oferecidos, incluindo tipo de plano, descrição, preço e duração.
+Treinos: Uma tabela para registrar os treinos dos alunos, incluindo descrição, data de início e data de fim do treino.
+Aulas: Uma tabela para armazenar informações sobre as aulas oferecidas na academia, incluindo tipo de aula, professor responsável, horário e capacidade.
+Pagamentos: Uma tabela para registrar os pagamentos realizados pelos alunos, incluindo data do pagamento, valor pago e forma de pagamento.
+README.md
+markdown
+# Banco de Dados Academia  
+
+## Visão Geral  
+O Banco de Dados Academia é um banco de dados relacional projetado para gerenciar as operações de uma academia, incluindo alunos, professores, planos de treinamento, treinos, aulas e pagamentos.  
+
+## Tabelas  
+- **Alunos**: Armazena informações sobre os alunos.  
+  - `id_aluno`: Identificador único do aluno.  
+  - `nome`: Nome do aluno.  
+  - `data_nascimento`: Data de nascimento do aluno.  
+  - `genero`: Gênero do aluno (feminino ou masculino).  
+  - `telefone`: Telefone do aluno.  
+  - `email`: E-mail do aluno.  
+  - `data_cadastro`: Data em que o aluno foi cadastrado.  
+
+- **Professores**: Armazena informações sobre os professores.  
+  - `id_professor`: Identificador único do professor.  
+  - `nome`: Nome do professor.  
+  - `especialidade`: Especialidade do professor.  
+  - `telefone`: Telefone do professor.  
+  - `email`: E-mail do professor.  
+
+- **Planos**: Armazena informações sobre os planos de treinamento.  
+  - `id_plano`: Identificador único do plano.  
+  - `tipo_plano`: Tipo de plano.  
+  - `descricao`: Descrição do plano.  
+  - `preco`: Preço do plano.  
+  - `duracao_meses`: Duração do plano em meses.  
+
+- **Treinos**: Registra os treinos dos alunos.  
+  - `id_treino`: Identificador único do treino.  
+  - `id_aluno`: Chave estrangeira referenciando o aluno.  
+  - `descricao`: Descrição do treino.  
+  - `data_inicio`: Data de início do treino.  
+  - `data_fim`: Data de fim do treino.  
+
+- **Aulas**: Armazena informações sobre as aulas oferecidas.  
+  - `id_aula`: Identificador único da aula.  
+  - `tipo_aula`: Tipo de aula.  
+  - `id_professor`: Chave estrangeira referenciando o professor responsável.  
+  - `horario`: Horário da aula.  
+  - `capacidade`: Capacidade da aula.  
+
+- **Pagamentos**: Registra os pagamentos realizados pelos alunos.  
+  - `id_pagamento`: Identificador único do pagamento.  
+  - `id_aluno`: Chave estrangeira referenciando o aluno.  
+  - `id_plano`: Chave estrangeira referenciando o plano.  
+  - `data_pagamento`: Data do pagamento.  
+  - `valor_pago`: Valor pago.  
+  - `forma_pagamento`: Forma de pagamento utilizada.  
+
+## Iniciando  
+Para configurar o banco de dados:  
+
+1. Clone o repositório:  
+   ```bash  
+   git clone <url-do-repositorio>  
+   cd Academia  
+Crie o banco de dados:
+
+sql
+CREATE DATABASE IF NOT EXISTS Academia;  
+USE Academia;  
+Execute os scripts SQL para criar as tabelas e inserir dados iniciais.

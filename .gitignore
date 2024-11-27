@@ -1,0 +1,26 @@
+Licença
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE para mais detalhes.
+
+shell
+
+### .gitignore  
+Ignorar arquivos de banco de dados
+*.sql
+*.db
+
+Ignorar arquivos de log
+*.log
+
+Ignorar arquivos temporários
+*.tmp
+*.bak
+
+Ignorar arquivos de ambiente
+.env
+
+perl
+
+### Notas  
+- Não se esqueça de substituir `<url-do-repositorio>` no README pela URL real do seu repositório Git.  
+- Certifique-se de que as datas no formato `datetime` e `date` estejam corretas ao inserir dados. Por exemplo, use o formato `YYYY-MM-DD` para datas.  
+- O campo `data_pagamento` na tabela `Pagamentos` deve ser do tipo `date` em vez de `varchar(100)` para garantir a integridade dos dados.
